@@ -1,0 +1,11 @@
+.app {
+  &__controls {
+    &--languages {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
