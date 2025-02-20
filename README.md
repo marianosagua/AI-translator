@@ -75,8 +75,4 @@ src/
 
 ## License
 
-Private project - All rights reserved
-
-## Contribution
-
-Internal contributions only. Follow the established code style and commit conventions.
+Private project.
