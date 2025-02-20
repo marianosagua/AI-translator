@@ -2,34 +2,36 @@
 
 ## Overview
 
-AI Translator is a React-based web application that provides real-time text translation using OpenAI's GPT-4 model. The application offers translation capabilities for French, Spanish, and Japanese languages.
+AI Translator is a modern web application that leverages OpenAI's GPT-4 model for accurate text translations. Built with React and TypeScript, it currently supports French, Spanish, and Japanese languages with real-time translation capabilities.
 
-## Features
+## Core Features
 
-- Clean and simple user interface
-- Real-time text translation
-- Support for multiple languages
-- Built with modern React and TypeScript
-- Powered by OpenAI's GPT-4 model
+- Seamless real-time translation
+- Support for multiple languages (French, Spanish, Japanese)
+- Modern, responsive interface
+- Context-aware translations powered by GPT-4
+- Error handling and loading states
+- Character count and input validation
 
-## Tech Stack
+## Technical Stack
 
-- React 19
-- TypeScript
-- Vite
-- SASS
-- OpenAI API
-- ESLint
+- React 19 + TypeScript
+- Vite for fast development and building
+- SASS for structured styling
+- OpenAI API integration
+- ESLint + Prettier for code quality
+- React Context for state management
+- Tailwind CSS
 
-## Getting Started
+## Setup Guide
 
-### Prerequisites
+### Requirements
 
-- Node.js (latest LTS version)
-- npm or yarn
+- Node.js 18+
+- npm/yarn
 - OpenAI API key
 
-### Installation
+### Quick Start
 
 1. Clone the repository
 2. Install dependencies:
@@ -38,40 +40,43 @@ AI Translator is a React-based web application that provides real-time text tran
 npm install
 ```
 
-3. Create a `.env` file in the root directory and add your OpenAI API key:
-
-```
-VITE_OPENAI_API_KEY=your_api_key_here
-```
-
-### Development
-
-Run the development server:
+3. Configure environment:
 
 ```bash
-npm run dev
+cp .env.example .env
+# Add your OpenAI API key to .env
 ```
 
-### Build
-
-Create a production build:
+### Development Commands
 
 ```bash
-npm run build
+npm run dev      # Start development server
+npm run build    # Create production build
+npm run lint     # Run code linting
 ```
 
-## Project Structure
+## Project Architecture
 
-- `/src` - Source code
-  - `App.tsx` - Main application component
-  - `main.tsx` - Application entry point
-  - `index.scss` - Global styles
+```
+src/
+├── components/    # Reusable UI components
+├── contexts/      # React contexts
+├── services/      # API and utility services
+├── styles/       # SASS modules
+└── types/        # TypeScript definitions
+```
+
+## Security Notes
+
+- API key should be stored securely
+- Consider implementing rate limiting
+- Add proper error boundaries
+- Implement input sanitization
 
 ## License
 
-Private project
+Private project - All rights reserved
 
-## Notes
+## Contribution
 
-- This application uses client-side API calls to OpenAI. In production, it's recommended to use a backend service to secure your API key.
-- The project uses modern ESM modules and the latest React features.
+Internal contributions only. Follow the established code style and commit conventions.
