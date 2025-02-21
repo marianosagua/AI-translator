@@ -1,5 +1,4 @@
 import { useState } from "react";
-import OpenAi from "openai";
 import { Languages, Loader2, RotateCcw } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "./components/ui/card";
 import { AnimatePresence, motion } from "motion/react";
@@ -7,11 +6,6 @@ import { Button } from "./components/ui/button";
 import { Textarea } from "./components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "./components/ui/radio-group";
 import { Label } from "./components/ui/label";
-
-const openai = new OpenAi({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
 
 const languages = ["French", "Spanish", "Japanese"];
 
@@ -23,30 +17,23 @@ function App() {
   const [translatedText, settranslatedText] = useState<string | null>("");
   const [isLoading, setisLoading] = useState(false);
 
-  const messages = [
-    {
-      role: "system" as const,
-      content: `I want you to be a translator. Translate the text between ### to ${language}.`,
-    },
-    {
-      role: "user" as const,
-      content: `
-        ###${text}###
-      `,
-    },
-  ];
-
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setisLoading(true);
 
     try {
-      const completitions = await openai.chat.completions.create({
-        model: "gpt-4",
-        messages,
-        temperature: 0,
+      const url = "https://openai-api-worker.marianosagua4343.workers.dev";
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text, language }),
       });
-      settranslatedText(completitions.choices[0].message.content);
+
+      const data = await response.text();
+      settranslatedText(data);
     } catch (error) {
       console.error(error);
     } finally {
