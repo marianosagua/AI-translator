@@ -1,78 +1,55 @@
-# AI Translator App
+# AI Translator
 
-## Overview
+A modern web application that provides real-time translation services using AI technology. Built with React, TypeScript, and Tailwind CSS, featuring a sleek user interface with smooth animations.
 
-AI Translator is a modern web application that leverages OpenAI's GPT-4 model for accurate text translations. Built with React and TypeScript, it currently supports French, Spanish, and Japanese languages with real-time translation capabilities.
+## Features
 
-## Core Features
+- Translate text to multiple languages (French, Spanish, Japanese)
+- Real-time translation using AI
+- Responsive and modern UI design
+- Smooth transitions and animations
+- Dark mode optimized interface
 
-- Seamless real-time translation
-- Support for multiple languages (French, Spanish, Japanese)
-- Modern, responsive interface
-- Context-aware translations powered by GPT-4
-- Error handling and loading states
-- Character count and input validation
+## Tech Stack
 
-## Technical Stack
-
-- React 19 + TypeScript
-- Vite for fast development and building
-- SASS for structured styling
-- OpenAI API integration
-- ESLint + Prettier for code quality
-- React Context for state management
+- React 19
+- TypeScript
 - Tailwind CSS
+- Motion for animations
+- Radix UI components
+- Lucide Icons
+- Vite as build tool
 
-## Setup Guide
-
-### Requirements
-
-- Node.js 18+
-- npm/yarn
-- OpenAI API key
-
-### Quick Start
+## Getting Started
 
 1. Clone the repository
-2. Install dependencies:
+
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. Configure environment:
+3. Run development server
 
 ```bash
-cp .env.example .env
-# Add your OpenAI API key to .env
+npm run dev
 ```
 
-### Development Commands
+4. Build for production
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Create production build
-npm run lint     # Run code linting
+npm run build
 ```
 
-## Project Architecture
+## Architecture
 
-```
-src/
-├── components/    # Reusable UI components
-├── contexts/      # React contexts
-├── services/      # API and utility services
-├── styles/       # SASS modules
-└── types/        # TypeScript definitions
-```
+The application follows a component-based architecture with:
 
-## Security Notes
-
-- API key should be stored securely
-- Consider implementing rate limiting
-- Add proper error boundaries
-- Implement input sanitization
-
-## License
-
-Private project.
+- UI components built using shadcn/ui
+- API integration for translations
+- Responsive design using Tailwind CSS
