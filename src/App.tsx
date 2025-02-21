@@ -32,6 +32,10 @@ function App() {
         body: JSON.stringify({ text, language }),
       });
 
+      if (!response.ok) {
+        throw new Error("Worker error: " + response.statusText);
+      }
+
       const data = await response.text();
       settranslatedText(data);
     } catch (error) {
